@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sudip Bhattarai — Media Creator & Future Entrepreneur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #F5F0E8;
+    --ink: #1A1A18;
+    --ink-soft: #4A4A46;
+    --ink-muted: #8A8A84;
+    --red: #C8331A;
+    --red-light: #F2E4DF;
+    --border: rgba(26,26,24,0.12);
+    --border-strong: rgba(26,26,24,0.25);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem; background: var(--cream); border-bottom: 0.5px solid var(--border); }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.02em; color: var(--ink); text-decoration: none; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: 0.85rem; font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--red); }
+
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 80px; }
+  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 6rem 4rem; border-right: 0.5px solid var(--border); }
+  .hero-tag { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.6rem; }
+  .hero-tag::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--red); }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 6vw, 5rem); font-weight: 700; line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+  h1 em { font-style: italic; color: var(--red); }
+  .hero-sub { font-size: 1.05rem; color: var(--ink-soft); line-height: 1.75; max-width: 440px; margin-bottom: 2.5rem; }
+  .hero-cta { display: inline-flex; align-items: center; gap: 0.6rem; background: var(--ink); color: var(--cream); padding: 0.85rem 2rem; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+  .hero-cta:hover { background: var(--red); transform: translateY(-1px); }
+  .hero-cta-arrow { font-size: 1rem; transition: transform 0.2s; }
+  .hero-cta:hover .hero-cta-arrow { transform: translateX(4px); }
+  .hero-right { display: flex; flex-direction: column; justify-content: flex-end; padding: 4rem; background: var(--ink); position: relative; overflow: hidden; }
+  .hero-bg-text { position: absolute; top: -0.15em; right: -0.05em; font-family: 'Playfair Display', serif; font-size: clamp(8rem, 16vw, 14rem); font-weight: 700; color: rgba(255,255,255,0.04); line-height: 1; pointer-events: none; user-select: none; white-space: nowrap; }
+  .hero-stats { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); }
+  .stat-box { padding: 2rem; background: var(--ink); }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 0.4rem; }
+  .stat-label { font-size: 0.75rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+  .hero-tagline { position: relative; z-index: 1; font-family: 'Playfair Display', serif; font-size: 1.5rem; font-style: italic; color: rgba(255,255,255,0.55); margin-bottom: 2rem; line-height: 1.4; }
+
+  .section-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.6rem; }
+  .section-label::before { content: ''; display: inline-block; width: 20px; height: 1px; background: var(--red); }
+  h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+
+  .about { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 0.5px solid var(--border); }
+  .about-text { padding: 6rem 4rem; border-right: 0.5px solid var(--border); }
+  .about-body { font-size: 1.05rem; color: var(--ink-soft); margin-bottom: 1.2rem; }
+  .about-highlight { margin: 2rem 0; padding: 1.5rem 2rem; border-left: 3px solid var(--red); background: var(--red-light); }
+  .about-highlight p { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-style: italic; color: var(--ink); }
+  .about-right { padding: 6rem 4rem; background: #EFEAD8; }
+  .values-list { list-style: none; margin-top: 1rem; }
+  .values-list li { display: flex; align-items: flex-start; gap: 1rem; padding: 1.2rem 0; border-bottom: 0.5px solid var(--border); font-size: 0.95rem; }
+  .values-list li:last-child { border-bottom: none; }
+  .value-num { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--red); line-height: 1; min-width: 32px; }
+  .value-text strong { display: block; font-weight: 500; color: var(--ink); margin-bottom: 0.2rem; }
+  .value-text span { font-size: 0.875rem; color: var(--ink-muted); }
+
+  .projects { padding: 6rem 4rem; border-top: 0.5px solid var(--border); }
+  .projects-header { margin-bottom: 3rem; }
+  .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 0.5px solid var(--border); }
+  .project-card { background: var(--cream); padding: 2rem; transition: background 0.2s; }
+  .project-card:hover { background: #EDE8D8; }
+  .project-icon { width: 40px; height: 40px; background: var(--red-light); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--red); }
+  .project-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--ink); }
+  .project-desc { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.65; margin-bottom: 1.5rem; }
+  .project-tag { display: inline-block; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.65rem; background: var(--red-light); color: var(--red); }
+
+  .interests { padding: 6rem 4rem; background: var(--ink); border-top: 0.5px solid var(--border); }
+  .interests .section-label { color: #D4A017; }
+  .interests .section-label::before { background: #D4A017; }
+  .interests h2 { color: #fff; }
+  .interests-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); margin-top: 3rem; }
+  .interest-item { padding: 2rem 1.5rem; background: var(--ink); text-align: center; transition: background 0.2s; }
+  .interest-item:hover { background: #252520; }
+  .interest-emoji { font-size: 1.8rem; display: block; margin-bottom: 0.75rem; }
+  .interest-name { font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.75); letter-spacing: 0.03em; }
+
+  .contact { display: grid; grid-template-columns: 1fr 1fr; border-top: 0.5px solid var(--border); }
+  .contact-left { padding: 6rem 4rem; border-right: 0.5px solid var(--border); }
+  .contact-left p { font-size: 1.05rem; color: var(--ink-soft); margin-bottom: 2rem; max-width: 380px; }
+  .contact-links { display: flex; flex-direction: column; gap: 0; }
+  .contact-link { display: flex; align-items: center; gap: 1rem; font-size: 0.9rem; color: var(--ink); text-decoration: none; padding: 0.85rem 0; border-bottom: 0.5px solid var(--border); transition: color 0.2s; }
+  .contact-link:hover { color: var(--red); }
+  .contact-link-icon { color: var(--red); font-size: 1rem; }
+  .contact-right { padding: 6rem 4rem; background: #EFEAD8; }
+  .contact-form-group { margin-bottom: 1.5rem; }
+  .contact-label { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); display: block; margin-bottom: 0.4rem; }
+  .contact-input, .contact-textarea { width: 100%; padding: 0.75rem 1rem; background: var(--cream); border: 0.5px solid var(--border-strong); color: var(--ink); font-family: 'DM Sans', sans-serif; font-size: 0.95rem; outline: none; transition: border-color 0.2s; }
+  .contact-input:focus, .contact-textarea:focus { border-color: var(--red); }
+  .contact-textarea { min-height: 120px; resize: vertical; }
+  .contact-btn { background: var(--red); color: #fff; border: none; padding: 0.85rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; width: 100%; }
+  .contact-btn:hover { background: #A0281A; transform: translateY(-1px); }
+
+  footer { padding: 2rem 4rem; border-top: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .footer-name { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--ink); }
+  .footer-copy { font-size: 0.8rem; color: var(--ink-muted); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .fade-up { animation: fadeUp 0.7s ease both; }
+  .fade-up-2 { animation: fadeUp 0.7s 0.15s ease both; }
+  .fade-up-3 { animation: fadeUp 0.7s 0.3s ease both; }
+  .fade-up-4 { animation: fadeUp 0.7s 0.45s ease both; }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.5rem; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 4rem 1.5rem 3rem; border-right: none; border-bottom: 0.5px solid var(--border); }
+    .hero-right { padding: 3rem 1.5rem; min-height: 320px; }
+    .about { grid-template-columns: 1fr; }
+    .about-text { border-right: none; border-bottom: 0.5px solid var(--border); padding: 3rem 1.5rem; }
+    .about-right { padding: 3rem 1.5rem; }
+    .projects { padding: 3rem 1.5rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .interests { padding: 3rem 1.5rem; }
+    .interests-grid { grid-template-columns: 1fr 1fr; }
+    .contact { grid-template-columns: 1fr; }
+    .contact-left { padding: 3rem 1.5rem; border-right: none; border-bottom: 0.5px solid var(--border); }
+    .contact-right { padding: 3rem 1.5rem; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">Sudip Bhattarai</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-left">
+    <p class="hero-tag fade-up">Based in Nepal</p>
+    <h1 class="fade-up-2">Media<br><em>Creator</em> &amp;<br>Entrepreneur</h1>
+    <p class="hero-sub fade-up-3">Student, storyteller, and future entrepreneur from Nepal — passionate about technology, business, and connecting with people through meaningful content.</p>
+    <a href="#contact" class="hero-cta fade-up-4">Get in touch <span class="hero-cta-arrow">→</span></a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-bg-text">SB</div>
+          <p class="hero-tagline">"My vision is simple —<br>to change a country."</p>
+    <div class="hero-stats">
+      <div class="stat-box"><div class="stat-num">3+</div><div class="stat-label">Years in Media</div></div>
+      <div class="stat-box"><div class="stat-num">NP</div><div class="stat-label">Nepal Post</div></div>
+      <div class="stat-box"><div class="stat-num">∞</div><div class="stat-label">Curiosity</div></div>
+      <div class="stat-box"><div class="stat-num">🌏</div><div class="stat-label">Change a Country</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="about" id="about">
+  <div class="about-text">
+    <p class="section-label">About Me</p>
+    <h2>Inform. Inspire.<br>Connect.</h2>
+    <p class="about-body">I'm Sudip Bhattarai — a student, media creator, and future entrepreneur from Nepal. My journey in media started at a young age, and it brought me to work with <strong>The Nepal Post</strong>, where I discovered the power of storytelling to inform and inspire.</p>
+    <div class="about-highlight"><p>"I enjoy turning ideas into reality, learning step by step through experience — and even when challenges come, I keep trying until I understand."</p></div>
+    <p class="about-body">I'm deeply passionate about technology, business, economics, and creativity. Whether it's building a YouTube channel, exploring AI music, or crafting a compelling story — I'm always chasing that next idea worth sharing with the world.</p>
+  </div>
+  <div class="about-right">
+    <p class="section-label">Core Values</p>
+    <h2 style="font-size: 1.6rem; margin-bottom: 1.5rem;">What drives me</h2>
+    <ul class="values-list">
+      <li><span class="value-num">01</span><div class="value-text"><strong>Continuous Learning</strong><span>Always seeking knowledge in technology, business &amp; beyond</span></div></li>
+      <li><span class="value-num">02</span><div class="value-text"><strong>Resilience</strong><span>Pushing through challenges until true understanding is reached</span></div></li>
+      <li><span class="value-num">03</span><div class="value-text"><strong>Meaningful Impact</strong><span>Creating work people will remember and connect with</span></div></li>
+      <li><span class="value-num">04</span><div class="value-text"><strong>Creativity</strong><span>Transforming ideas into real, tangible projects</span></div></li>
+    </ul>
+  </div>
+</div>
+
+<section class="projects" id="projects">
+  <div class="projects-header">
+    <p class="section-label">Work &amp; Projects</p>
+    <h2>What I'm building</h2>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-icon">📰</div>
+      <div class="project-title">The Nepal Post</div>
+      <p class="project-desc">Contributing to one of Nepal's leading media outlets, sharpening skills in journalism, reporting, and digital storytelling that reaches thousands of readers.</p>
+      <span class="project-tag">Journalism</span>
+    </div>
+    <div class="project-card">
+      <div class="project-icon">▶</div>
+      <div class="project-title">The Knowledge Hub</div>
+      <p class="project-desc">A YouTube project designed to educate and inspire — breaking down complex topics in technology, economics, and business into accessible, engaging content.</p>
+      <span class="project-tag">YouTube</span>
+    </div>
+    <div class="project-card">
+      <div class="project-icon">🎵</div>
+      <div class="project-title">AI Music Creation</div>
+      <p class="project-desc">Exploring the frontier of AI-generated music — blending creativity with technology to produce original sounds and soundscapes that push artistic boundaries.</p>
+      <span class="project-tag">AI · Music</span>
+    </div>
+    <div class="project-card">
+      <div class="project-icon">🎬</div>
+      <div class="project-title">Content Creation</div>
+      <p class="project-desc">Producing engaging video and digital content across platforms — from scripting and filming to editing and publishing, crafting stories that resonate with audiences.</p>
+      <span class="project-tag">Content · Media</span>
+    </div>
+    <div class="project-card">
+      <div class="project-icon">✍️</div>
+      <div class="project-title">Content Writing</div>
+      <p class="project-desc">Crafting compelling written pieces — articles, blogs, and scripts — that inform, entertain, and inspire readers across a wide range of topics and industries.</p>
+      <span class="project-tag">Writing · Storytelling</span>
+    </div>
+  </div>
+</section>
+
+<section class="interests">
+  <p class="section-label">Passions</p>
+  <h2>What excites me</h2>
+  <div class="interests-grid">
+    <div class="interest-item"><span class="interest-emoji">💻</span><div class="interest-name">Technology</div></div>
+    <div class="interest-item"><span class="interest-emoji">📈</span><div class="interest-name">Business</div></div>
+    <div class="interest-item"><span class="interest-emoji">🌍</span><div class="interest-name">Economics</div></div>
+    <div class="interest-item"><span class="interest-emoji">✍️</span><div class="interest-name">Storytelling</div></div>
+    <div class="interest-item"><span class="interest-emoji">🎨</span><div class="interest-name">Creativity</div></div>
+    <div class="interest-item"><span class="interest-emoji">🤖</span><div class="interest-name">Artificial Intelligence</div></div>
+    <div class="interest-item"><span class="interest-emoji">🎬</span><div class="interest-name">Content Creation</div></div>
+    <div class="interest-item"><span class="interest-emoji">🚀</span><div class="interest-name">Entrepreneurship</div></div>
+  </div>
+</section>
+
+<div class="contact" id="contact">
+  <div class="contact-left">
+    <p class="section-label">Contact</p>
+    <h2>Let's connect</h2>
+    <p>Whether you want to collaborate, share ideas, or just say hello — I'm always open to meaningful conversations.</p>
+    <div class="contact-links">
+      <a href="mailto:sudipbhattarai0011@gmail.com" class="contact-link"><span class="contact-link-icon">✉</span> sudipbhattarai0011@gmail.com</a>
+      <a href="#" class="contact-link"><span class="contact-link-icon">▶</span> The Knowledge Hub — YouTube</a>
+      <a href="https://facebook.com/SudepBhattarai" target="_blank" class="contact-link"><span class="contact-link-icon">📘</span> Sudep Bhattarai — Facebook</a>
+      <a href="https://instagram.com/sudep_bhattarai" target="_blank" class="contact-link"><span class="contact-link-icon">📸</span> sudep_bhattarai — Instagram</a>
+      <a href="#" class="contact-link"><span class="contact-link-icon">📍</span> Nepal</a>
+    </div>
+  </div>
+  <div class="contact-right">
+    <p class="section-label">Send a message</p>
+    <div class="contact-form-group">
+      <label class="contact-label">Your Name</label>
+      <input type="text" class="contact-input" placeholder="e.g. Anita Sharma">
+    </div>
+    <div class="contact-form-group">
+      <label class="contact-label">Email</label>
+      <input type="email" class="contact-input" placeholder="your@email.com">
+    </div>
+    <div class="contact-form-group">
+      <label class="contact-label">Message</label>
+      <textarea class="contact-textarea" placeholder="What's on your mind?"></textarea>
+    </div>
+    <button class="contact-btn">Send Message →</button>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-name">Sudip Bhattarai</span>
+  <span class="footer-copy">© 2026 · Media Creator · Nepal</span>
+</footer>
+
+</body>
+</html>
